@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,listMonth'
+            right: 'dayGridMonth,listMonth'
           },
         //defaultDate: '2019-04-12',
         editable: true,
@@ -25,13 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
             $('#visualizar #title').text(info.event.title);
             $('#visualizar #start').text(info.event.start.toLocaleString());
             $('#visualizar #end').text(info.event.end.toLocaleString());
+            $('#visualizar #del_id').val(info.event.id);
             $('#visualizar').modal('show');
         },
         selectable: true,
         select: function (info) {
             //alert('Início do evento: ' + info.start.toLocaleString());
             $('#cadastrar #start').val(info.start.toLocaleString());
-            $('#cadastrar #end').val(info.end.toLocaleString());
+            $('#cadastrar #end').val(info.start.toLocaleString());
             $('#cadastrar').modal('show');
         }
     });
