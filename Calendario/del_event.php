@@ -2,7 +2,7 @@
 session_start();
 include_once './conexao.php';
 
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+$id = filter_input(INPUT_POST, 'del_id', FILTER_SANITIZE_NUMBER_INT);
 if(!empty($id)){
     $qry_delete = "DELETE FROM events WHERE id='$id'";    
     $delete_event = $conn->prepare($qry_delete);

@@ -62,11 +62,13 @@ session_start();
                             <dt class="col-sm-3">Fim do curso</dt>
                             <dd class="col-sm-9" id="end"></dd>
                         </dl>
-                        <form class="form-horizontal" method="POST" action="del_event.php" >
-                        <input type="hidden" class="form-control" name="id" id="id" >
-                            <button type="submit" class="btn btn-danger">Excluir</button>
-                            
-                    </form>
+                        <form class="form-horizontal" method="POST"  action="del_event.php" >
+                            <!--<input type="hidden" class="form-control" name="id" id="id" value="<?php echo "id"->id ?>">-->
+
+                            <input type="hidden" class="form-control" name="del_id" id="del_id" >
+
+                            <button type="submit" class="btn btn-danger">Excluir</button>                            
+                        </form>
                     </div>
                     
                 </div>
