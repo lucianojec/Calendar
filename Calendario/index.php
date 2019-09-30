@@ -43,6 +43,7 @@ session_start();
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Detalhes do Agendamento</h5>
+                        
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -55,13 +56,19 @@ session_start();
                             <dt class="col-sm-3">Título do evento</dt>
                             <dd class="col-sm-9" id="title"></dd>
 
-                            <dt class="col-sm-3">Início do evento</dt>
+                            <dt class="col-sm-3">Início do curso</dt>
                             <dd class="col-sm-9" id="start"></dd>
 
-                            <dt class="col-sm-3">Fim do evento</dt>
+                            <dt class="col-sm-3">Fim do curso</dt>
                             <dd class="col-sm-9" id="end"></dd>
                         </dl>
+                        <form class="form-horizontal" method="POST" action="del_event.php" >
+                        <input type="hidden" class="form-control" name="id" id="id" >
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                            
+                    </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -79,9 +86,9 @@ session_start();
                         <span id="msg-cad"></span>
                         <form id="addevent" method="POST" enctype="multipart/form-data">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Título</label>
+                                <label class="col-sm-2 col-form-label">Nome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="title" class="form-control" id="title" placeholder="Título do evento">
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="usuario.rede - time">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -109,7 +116,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Final do Curso</label>
+                                <label class="col-sm-2 col-form-label">Fim do Curso</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="end" class="form-control" id="end"  onkeypress="DataHora(event, this)">
                                 </div>

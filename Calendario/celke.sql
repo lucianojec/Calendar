@@ -19,40 +19,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: 'celke'
+-- Database: `celke`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela 'events'
+-- Estrutura da tabela 'agenda'
 --
 
-DROP TABLE IF EXISTS 'events';
-CREATE TABLE IF NOT EXISTS 'events' (
-  'id' int(11) NOT NULL AUTO_INCREMENT,
-  'title' varchar(220) DEFAULT NULL,
-  'color' varchar(10) DEFAULT NULL,
-  'start' datetime DEFAULT NULL,
-  'end' datetime DEFAULT NULL,
-  PRIMARY KEY ('id')
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(220) DEFAULT NULL,
+  `color` varchar(10) DEFAULT NULL,
+  `start` datetime DEFAULT NULL,
+  `end` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS agenda;
+CREATE TABLE IF NOT EXISTS agenda (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nome varchar(220) DEFAULT NULL,
+  time varchar(10) DEFAULT NULL,
+  start datetime DEFAULT NULL,
+  end datetime DEFAULT NULL,
+  PRIMARY KEY (id')
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela 'events'
+-- Extraindo dados da tabela `events`
 --
+INSERT INTO agenda (id, nome, time, start, end) VALUES 
+(NULL, 'luciano.fagundes','Italia', '2019','09','30 14:00:00',   '2019','09','30 15:00:00'),
+(NULL, 'tiago.davi' ,'Italia', '2019','09','30 09:00:00',   '2019','09','30 11:00:00'),
+(NULL, 'tiago.quadros','Alemanha', '2019','10','01 21:00:00',   '2019','10','01 23:00:00'),
+(NULL, 'rodrigo.silva','Russia','2019','10','01 03:00:00',   '2019','10','01 05:00:00'),
+(NULL, 'pedro.oliveira','Japao', '2019','10','01 08:00:00',   '2019','10','01 10:00:00'),
+(NULL, 'ciclano.rocha','Brasil', '2019','10','02 16:00:00',   '2019','10','02 17:00:00'),
+(NULL, 'fulano.pereira','Franca', '2019','10','03 17:00:00',   '2019','10','03 19:00:00'),
+(NULL, 'beltrano.pereira','Alemanha', '2019','10','03 18:00:00',   '2019','10','03 20:00:00'),
+(NULL, 'josias.matos','Franca', '2019','10','02 22:00:00',   '2019','10','02 23:00:00'),
+(NULL, 'douglas.xuint','Russia', '2019','10','03 14:00:00',   '2019','10','03 15:00:00')
 
-INSERT INTO 'events' ('id', 'title', 'color', 'start', 'end') VALUES
-(1, 'Tutorial PagSeguro', '#FFD700', '2019-05-21 15:00:00', '2019-05-21 16:00:00'),
-(2, 'Tutorial FullCalendar editar detalhes do evento', '#0071c5', '2019-05-30 15:00:00', '2019-05-30 00:00:00'),
-(3, 'Tutorial FullCalendar Visualizar detalhes do evento', '#0071c5', '2019-05-23 15:00:00', '2019-05-23 16:00:00'),
-(4, 'Reuniao 3', '#40e0d0', '2019-05-17 17:00:00', '2019-05-17 18:00:00'),
-(5, 'Reuniao 4', '#0071c5', '2019-05-17 15:00:00', '2019-05-17 16:00:00'),
-(6, 'Reuniao 5', '#FFD700', '2019-05-17 13:00:00', '2019-05-17 14:00:00'),
-(7, 'Reuniao 6', '#0071c5', '2019-05-17 11:00:00', '2019-05-17 12:00:00'),
-(8, 'Reuniao 7', '#40e0d0', '2019-05-17 09:00:00', '2019-05-17 10:00:00'),
-(9, 'Tutorial', '#228B22', '2019-09-12 00:00:00', '2019-09-13 00:00:00'),
-(10, 'Tutorial 2', '#FF4500', '2019-09-13 15:10:10', '2019-09-13 17:15:15');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
