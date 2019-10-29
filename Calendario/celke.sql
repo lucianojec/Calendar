@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: 04-Set-2019 às 00:19
--- Versão do servidor: 5.7.23
--- versão do PHP: 7.2.10
+-- Host: 127.0.0.1
+-- Tempo de geração: 14/11/2017 às 00:12
+-- Versão do servidor: 5.7.14
+-- Versão do PHP: 7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,52 +17,56 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `celke`
+-- Banco de dados: `celke`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela 'agenda'
+-- Estrutura para tabela `events`
 --
 
-DROP TABLE IF EXISTS `events`;
-CREATE TABLE IF NOT EXISTS `events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
   `title` varchar(220) DEFAULT NULL,
   `color` varchar(10) DEFAULT NULL,
   `start` datetime DEFAULT NULL,
-  `end` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-
-DROP TABLE IF EXISTS agenda;
-CREATE TABLE IF NOT EXISTS agenda (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  nome varchar(220) DEFAULT NULL,
-  time varchar(10) DEFAULT NULL,
-  start datetime DEFAULT NULL,
-  end datetime DEFAULT NULL,
-  PRIMARY KEY (id')
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  `end` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `events`
+-- Fazendo dump de dados para tabela `events`
 --
-INSERT INTO agenda (id, nome, time, start, end) VALUES 
-(NULL, 'luciano.fagundes','Italia', '2019','09','30 14:00:00',   '2019','09','30 15:00:00'),
-(NULL, 'tiago.davi' ,'Italia', '2019','09','30 09:00:00',   '2019','09','30 11:00:00'),
-(NULL, 'tiago.quadros','Alemanha', '2019','10','01 21:00:00',   '2019','10','01 23:00:00'),
-(NULL, 'rodrigo.silva','Russia','2019','10','01 03:00:00',   '2019','10','01 05:00:00'),
-(NULL, 'pedro.oliveira','Japao', '2019','10','01 08:00:00',   '2019','10','01 10:00:00'),
-(NULL, 'ciclano.rocha','Brasil', '2019','10','02 16:00:00',   '2019','10','02 17:00:00'),
-(NULL, 'fulano.pereira','Franca', '2019','10','03 17:00:00',   '2019','10','03 19:00:00'),
-(NULL, 'beltrano.pereira','Alemanha', '2019','10','03 18:00:00',   '2019','10','03 20:00:00'),
-(NULL, 'josias.matos','Franca', '2019','10','02 22:00:00',   '2019','10','02 23:00:00'),
-(NULL, 'douglas.xuint','Russia', '2019','10','03 14:00:00',   '2019','10','03 15:00:00')
 
-COMMIT;
+INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`) VALUES
+(1, 'Reuniao', '#0071c5', '2017-11-23 09:00:00', '2017-11-23 11:00:00'),
+(2, 'Palestra', '#40e0d0', '2017-11-13 14:00:00', '2017-11-13 17:00:00'),
+(3, 'Reuniao 1', '#FFD700', '2017-11-23 08:00:00', '2017-11-23 09:00:00'),
+(4, 'Reuniao 3', '#40e0d0', '2017-11-23 10:00:00', '2017-11-23 11:00:00'),
+(5, 'Reuniao 4', '#0071c5', '2017-11-23 11:00:00', '2017-11-13 12:00:00'),
+(6, 'Reuniao 5', '#FFD700', '2017-11-23 13:00:00', '2017-11-23 14:00:00'),
+(7, 'Reuniao 6', '#0071c5', '2017-11-23 14:00:00', '2017-11-23 15:00:00'),
+(8, 'Reuniao 7', '#FFD700', '2017-11-23 16:00:00', '2017-11-23 17:00:00');
 
+--
+-- Índices de tabelas apagadas
+--
+
+--
+-- Índices de tabela `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
